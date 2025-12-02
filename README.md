@@ -64,18 +64,61 @@ This includes:
 ✔ SQL output screenshots
 ✔ Business recommendations
 
-▶️ How to Run Locally (Optional)
 
-If you extend this project into a Python + SQL hybrid, a local workflow might look like:
+▶️ How to Run Locally
 
-Clone the Repository
+If you wish to run or extend the SQL locally, follow this workflow:
 
+1️⃣ Clone the Repository
 git clone https://github.com/your-username/intel-sustainability-analysis.git
 cd intel-sustainability-analysis
 
+2️⃣ Install Dependencies (Optional)
 
-Review SQL Logic
-Inside the SQL/ folder, review or copy the queries to your SQL engine (BigQuery, PostgreSQL, DuckDB, etc.).
+If working with data or adding Python enhancements:
 
-Open the PDF Report
-Navigate to the analysis/ folder to view the complete Intel milestone deliverable.
+pip install -r requirements.txt
+
+3️⃣ Generate Dummy Data
+
+Run the data generator to create Intel-style datasets:
+
+python generate_data.py
+
+
+This creates:
+
+data/device_data.csv
+data/impact_data.csv
+
+4️⃣ Run SQL Logic
+
+Open any SQL engine (DuckDB recommended) and load the queries from /SQL/.
+
+Example using DuckDB:
+
+SELECT * FROM read_csv_auto('data/device_data.csv');
+
+
+Then run each file:
+
+01_join_device_and_impact.sql
+
+02_device_age_and_buckets.sql
+
+03_summary_overall_impact.sql
+
+04_impact_by_device_type.sql
+
+05_impact_by_device_age_bucket.sql
+
+06_region_device_contributions.sql
+
+5️⃣ View the PDF Report
+
+Open:
+
+analysis/Intel_Sustainability_Impact_Report.pdf
+
+
+This contains the full contextual writeup, milestone answers, and KPI analysis.
