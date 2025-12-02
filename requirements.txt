@@ -1,0 +1,12 @@
+# Core SQL analysis stack (optional local exploration)
+pandas
+sqlalchemy
+
+# Optional PDF utilities (if you add automated PDF extraction later)
+pdfplumber
+
+# Optional analysis helpers
+numpy
+
+# Optional Jupyter support (for expanding the project)
+jupyter
